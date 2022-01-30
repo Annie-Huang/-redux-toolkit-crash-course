@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import { useSelector } from 'react-redux';
 import { RootState } from './app/store';
+import ReservationCard from './Components/ReservationCard';
 
 // https://redux-toolkit.js.org/tutorials/quick-start#use-redux-state-and-actions-in-react-components
 function App() {
@@ -16,7 +17,11 @@ function App() {
         <div className='reservation-container'>
           <div>
             <h5 className='reservation-header'>Reservations</h5>
-            <div className='reservation-cards-container'></div>
+            <div className='reservation-cards-container'>
+              {reservations.map((name, index) => (
+                <ReservationCard name={name} key={index} />
+              ))}
+            </div>
           </div>
           <div className='reservation-input-container'>
             <input />
