@@ -1,6 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState = {
+interface ReservationState {
+  value: string[];
+}
+
+const initialState: ReservationState = {
   value: [],
 };
 
@@ -8,7 +12,9 @@ export const reservationSlice = createSlice({
   name: 'reservations',
   initialState,
   reducers: {
-    // add: (state, payload) => {},
+    addReservation: (state, action: PayloadAction<string>) => {
+      state.value.push(action.payload);
+    },
   },
 });
 
