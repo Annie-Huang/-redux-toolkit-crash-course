@@ -6,6 +6,9 @@ https://github.com/Annie-Huang/redux-toolkit-crash-course
 https://redux-toolkit.js.org/tutorials/quick-start
 https://redux-toolkit.js.org/tutorials/quick-start#create-a-redux-store
 
+https://redux-toolkit.js.org/tutorials/quick-start#create-a-redux-store
+https://redux-toolkit.js.org/tutorials/quick-start#create-a-redux-state-slice
+https://redux-toolkit.js.org/tutorials/quick-start#use-redux-state-and-actions-in-react-components
 
 ===================================================================================================
 

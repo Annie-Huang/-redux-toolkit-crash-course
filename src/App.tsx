@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import './App.css';
+import { useSelector } from 'react-redux';
+import { RootState } from './app/store';
 
+// https://redux-toolkit.js.org/tutorials/quick-start#use-redux-state-and-actions-in-react-components
 function App() {
+  // This needs to match the store's reducer name
+  const reservations = useSelector(
+    (state: RootState) => state.reservations.value
+  );
+
   return (
     <div className='App'>
       <div className='container'>

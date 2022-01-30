@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+// https://redux-toolkit.js.org/tutorials/quick-start#create-a-redux-state-slice
+
 interface ReservationState {
   value: string[];
 }
@@ -17,5 +19,7 @@ export const reservationSlice = createSlice({
     },
   },
 });
+
+export const { addReservation } = reservationSlice.actions;
 
 export default reservationSlice.reducer;
