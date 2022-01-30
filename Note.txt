@@ -3,7 +3,10 @@ React with Redux Toolkit Crash Course (https://www.youtube.com/watch?v=jR4fagDcv
 https://github.com/harblaith7/Redux-Toolkit-Crash-Course
 https://github.com/Annie-Huang/redux-toolkit-crash-course
 
+https://redux-toolkit.js.org/tutorials/quick-start
 https://redux-toolkit.js.org/tutorials/quick-start#create-a-redux-store
+
+
 ===================================================================================================
 
 PS C:\react> npx create-react-app redux-toolkit-crash-course --template typescript --use-npm
