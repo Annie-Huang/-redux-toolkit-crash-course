@@ -6,3 +6,4 @@ https://github.com/Annie-Huang/redux-toolkit-crash-course
 ========================================================================
 
 PS C:\react> npx create-react-app redux-toolkit-crash-course --template typescript --use-npm
+PS C:\react\redux-toolkit-crash-course> npm install @reduxjs/toolkit react-redux
