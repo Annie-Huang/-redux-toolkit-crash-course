@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './app/store';
 import ReservationCard from './Components/ReservationCard';
 import { addReservation } from './features/reservationSlice';
+import CustomerCard from './Components/CustomerCard';
 
 // https://redux-toolkit.js.org/tutorials/quick-start#use-redux-state-and-actions-in-react-components
 function App() {
@@ -13,6 +14,8 @@ function App() {
   const reservations = useSelector(
     (state: RootState) => state.reservations.value
   );
+
+  const customers = useSelector((state: RootState) => state.customers.value);
 
   const dispatch = useDispatch();
 
@@ -43,7 +46,11 @@ function App() {
             <button onClick={handleAddReservations}>Add</button>
           </div>
         </div>
-        <div className='customer-food-container'></div>
+        <div className='customer-food-container'>
+          {customers.map((customer, index) => (
+            <CustomerCard key={index} />
+          ))}
+        </div>
       </div>
     </div>
   );
