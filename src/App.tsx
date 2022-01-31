@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { useSelector } from 'react-redux';
 import { RootState } from './app/store';
@@ -6,10 +6,16 @@ import ReservationCard from './Components/ReservationCard';
 
 // https://redux-toolkit.js.org/tutorials/quick-start#use-redux-state-and-actions-in-react-components
 function App() {
+  const [reservationNameInput, setReservationNameInput] = useState('');
+
   // This needs to match the store's reducer name
   const reservations = useSelector(
     (state: RootState) => state.reservations.value
   );
+
+  const handleAddReservations = () => {
+    if (!reservationNameInput) return;
+  };
 
   return (
     <div className='App'>
@@ -24,8 +30,11 @@ function App() {
             </div>
           </div>
           <div className='reservation-input-container'>
-            <input />
-            <button>Add</button>
+            <input
+              value={reservationNameInput}
+              onChange={(e) => setReservationNameInput(e.target.value)}
+            />
+            <button onClick={handleAddReservations}>Add</button>
           </div>
         </div>
         <div className='customer-food-container'>
