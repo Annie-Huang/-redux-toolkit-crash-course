@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './app/store';
 import ReservationCard from './Components/ReservationCard';
+import { addReservation } from './features/reservationSlice';
 
 // https://redux-toolkit.js.org/tutorials/quick-start#use-redux-state-and-actions-in-react-components
 function App() {
@@ -13,8 +14,13 @@ function App() {
     (state: RootState) => state.reservations.value
   );
 
+  const dispatch = useDispatch();
+
   const handleAddReservations = () => {
     if (!reservationNameInput) return;
+
+    dispatch(addReservation(reservationNameInput));
+    setReservationNameInput('');
   };
 
   return (
