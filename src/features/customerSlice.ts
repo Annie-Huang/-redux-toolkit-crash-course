@@ -33,7 +33,7 @@ export const customerSlice = createSlice({
       const customer = state.value.find(
         (customer) => customer.id === action.payload.id
       );
-      customer.food.push(action.payload.food);
+      customer?.food.push(action.payload.food);
 
       /*       // author's method:
       state.value.forEach((customer) => {
