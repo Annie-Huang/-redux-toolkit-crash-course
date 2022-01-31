@@ -48,7 +48,7 @@ function App() {
         </div>
         <div className='customer-food-container'>
           {customers.map((customer, index) => (
-            <CustomerCard key={index} />
+            <CustomerCard key={index} {...customer} />
           ))}
         </div>
       </div>

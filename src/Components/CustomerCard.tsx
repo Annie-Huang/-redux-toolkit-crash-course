@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const CustomerCard = () => {
+interface CustomerCardType {
+  id: string;
+  name: string;
+  food: string[];
+}
+
+const CustomerCard: FC<CustomerCardType> = ({ id, name, food }) => {
   return (
     <div className='customer-food-card-container'>
-      <p>Selena Gomez</p>
+      <p>{name}</p>
       <div className='customer-foods-container'>
-        <div className='customer-food'></div>
+        <div className='customer-food'>
+          {food.map((item) => (
+            <p key={item}>{item}</p>
+          ))}
+        </div>
         <div className='customer-food-input-container'>
           <input />
           <button>Add</button>
