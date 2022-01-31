@@ -42,9 +42,21 @@ export const customerSlice = createSlice({
         }
       }); */
     },
+    deleteCustomer: (state, action: PayloadAction<string>) => {
+      const index = state.value.findIndex(
+        (customer) => customer.id === action.payload
+      );
+      if (index > -1) {
+        state.value.splice(index, 1);
+      }
+    },
   },
 });
 
-export const { addCustomer, addFoodToCustomer } = customerSlice.actions;
+export const {
+  addCustomer,
+  addFoodToCustomer,
+  deleteCustomer,
+} = customerSlice.actions;
 
 export default customerSlice.reducer;
