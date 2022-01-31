@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { addCustomer } from '../features/customerSlice';
 import { removeReservation } from '../features/reservationSlice';
+import { v4 as uuid } from 'uuid';
 
 interface ReservationCardTypes {
   name: string;
@@ -18,7 +19,7 @@ const ReservationCard: FC<ReservationCardTypes> = ({ name, index }) => {
         dispatch(removeReservation(index));
         dispatch(
           addCustomer({
-            id: '',
+            id: uuid(),
             name,
             food: [],
           })
