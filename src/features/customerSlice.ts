@@ -50,6 +50,12 @@ export const customerSlice = createSlice({
         state.value.splice(index, 1);
       }
     },
+    deleteFood: (state, action: PayloadAction<string>) => {
+      const customer = state.value.find(
+        (customer) => customer.id === action.payload
+      );
+      customer?.food.shift();
+    },
   },
 });
 
@@ -57,6 +63,7 @@ export const {
   addCustomer,
   addFoodToCustomer,
   deleteCustomer,
+  deleteFood,
 } = customerSlice.actions;
 
 export default customerSlice.reducer;

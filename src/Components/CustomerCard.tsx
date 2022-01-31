@@ -1,6 +1,10 @@
 import React, { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addFoodToCustomer, deleteCustomer } from '../features/customerSlice';
+import {
+  addFoodToCustomer,
+  deleteCustomer,
+  deleteFood,
+} from '../features/customerSlice';
 
 interface CustomerCardType {
   id: string;
@@ -21,6 +25,7 @@ const CustomerCard: FC<CustomerCardType> = ({ id, name, food }) => {
   };
 
   const handleDeleteCustomerBtnClick = () => dispatch(deleteCustomer(id));
+  const handleDeleteFoodBtnClick = () => dispatch(deleteFood(id));
 
   return (
     <div className='customer-food-card-container'>
@@ -33,6 +38,9 @@ const CustomerCard: FC<CustomerCardType> = ({ id, name, food }) => {
         </div>
 
         <button onClick={handleDeleteCustomerBtnClick}>Delete Customer</button>
+        <button onClick={handleDeleteFoodBtnClick} disabled={food.length === 0}>
+          Delete food
+        </button>
 
         <div className='customer-food-input-container'>
           <input
